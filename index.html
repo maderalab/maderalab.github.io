@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
@@ -22,12 +26,13 @@
         .container {
             max-width: 850px;
             padding: 60px 40px;
+            width: 100%;
         }
 
         h1 {
             font-size: 3em;
             letter-spacing: 4px;
-            margin-bottom: 10px;
+            margin-bottom: 16px;
         }
 
         h2 {
@@ -53,17 +58,115 @@
             opacity: 0.6;
         }
 
-        .projects a {
-            display: block;
-            margin: 14px 0;
-            color: #ffd166;
+        /* Top navigation menu */
+        .nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px 28px;
+            margin-bottom: 10px;
+        }
+
+        .nav a {
+            color: #ffffff;
             text-decoration: none;
-            font-size: 1.1em;
-            transition: opacity 0.2s ease;
+            font-size: 0.95em;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            opacity: 0.8;
+            padding: 6px 4px;
+            border-bottom: 2px solid transparent;
+            transition: opacity 0.2s ease, border-color 0.2s ease;
+        }
+
+        .nav a:hover {
+            opacity: 1;
+            border-color: #ffd166;
+        }
+
+        /* Project buttons — vibrant cards */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 18px;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .projects a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 22px 16px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.15em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+            transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+        }
+
+        .projects a .icon {
+            font-size: 1.3em;
         }
 
         .projects a:hover {
-            opacity: 0.75;
+            transform: translateY(-6px) scale(1.03);
+            background: linear-gradient(135deg, #ffd166, #ff8c42);
+            color: #1e3c72;
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Docs — tidy aligned list */
+        .docs {
+            max-width: 520px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .docs a {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.06);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.05em;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.2s ease, padding-left 0.2s ease;
+        }
+
+        .docs a + a {
+            margin-top: 10px;
+        }
+
+        .docs a .doc-icon {
+            color: #ffd166;
+            font-size: 1.1em;
+        }
+
+        .docs a .doc-arrow {
+            margin-left: auto;
+            opacity: 0.5;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .docs a:hover {
+            background: rgba(255, 255, 255, 0.14);
+            padding-left: 26px;
+        }
+
+        .docs a:hover .doc-arrow {
+            opacity: 1;
+            transform: translateX(4px);
         }
 
         footer {
@@ -78,6 +181,13 @@
     <div class="container">
 
         <h1>Madera Lab</h1>
+
+        <!-- Navigation Menu -->
+        <nav class="nav">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#docs">Docs</a>
+        </nav>
 
         <!-- About Section -->
         <section id="about">
@@ -94,29 +204,34 @@
             <div class="divider"></div>
             <div class="projects">
                 <a href="https://maderalab.github.io/maderalabplay/Draw" target="_blank">
-                    ⚛︎ Draw
+                    <span class="icon">🎨</span> Draw
                 </a>
                 <a href="https://maderalab.github.io/maderalabplay/Han" target="_blank">
-                    ⚛︎ 汉字
+                    <span class="icon">🀄</span> 汉字
                 </a>
                 <a href="https://maderalab.github.io/maderalabplay/Math" target="_blank">
-                    ⚛︎ Math
+                    <span class="icon">➗</span> Math
                 </a>
                 <a href="https://maderalab.github.io/maderalabplay/Pet" target="_blank">
-                    ⚛︎ Pet
+                    <span class="icon">🐾</span> Pet
                 </a>
             </div>
         </section>
 
+        <!-- Docs Section -->
         <section id="docs">
             <h2>Docs</h2>
             <div class="divider"></div>
-            <div class="projects">
+            <div class="docs">
                 <a href="https://maderalab.github.io/han/hailey_race_cheat_sheet.html" target="_blank">
-                    ⚛︎ Race Cheat Sheet
+                    <span class="doc-icon">📄</span>
+                    <span>Race Cheat Sheet</span>
+                    <span class="doc-arrow">→</span>
                 </a>
                 <a href="https://maderalab.github.io/han/hailey_tennis_cheat_sheet.html" target="_blank">
-                    ⚛︎ Tennis Cheat Sheet
+                    <span class="doc-icon">📄</span>
+                    <span>Tennis Cheat Sheet</span>
+                    <span class="doc-arrow">→</span>
                 </a>
             </div>
         </section>
