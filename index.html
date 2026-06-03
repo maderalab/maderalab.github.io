@@ -160,8 +160,13 @@
         }
 
         .docs a .doc-icon {
-            color: #ffd166;
+            color: var(--doc-accent, #ffd166);
             font-size: 1.1em;
+        }
+
+        /* Accent each doc with its own theme color */
+        .docs a {
+            border-left: 4px solid var(--doc-accent, transparent);
         }
 
         .docs a .doc-arrow {
@@ -219,14 +224,24 @@
             <h2>Docs</h2>
             <div class="divider"></div>
             <div class="docs">
-                <a href="https://maderalab.github.io/docs/hailey_race_cheat_sheet.html" target="_blank">
-                    <span class="doc-icon">📄</span>
+                <a style="--doc-accent:#ff5e6c" href="https://maderalab.github.io/docs/hailey_race_cheat_sheet.html" target="_blank">
+                    <span class="doc-icon">🏃</span>
                     <span>Race Cheat Sheet</span>
                     <span class="doc-arrow">→</span>
                 </a>
-                <a href="https://maderalab.github.io/docs/hailey_tennis_cheat_sheet.html" target="_blank">
-                    <span class="doc-icon">📄</span>
+                <a style="--doc-accent:#2b7de9" href="https://maderalab.github.io/docs/hailey_tennis_cheat_sheet.html" target="_blank">
+                    <span class="doc-icon">🎾</span>
                     <span>Tennis Cheat Sheet</span>
+                    <span class="doc-arrow">→</span>
+                </a>
+                <a style="--doc-accent:#d4ff3f" href="https://maderalab.github.io/docs/tennis_cheat_sheet_adv.html" target="_blank">
+                    <span class="doc-icon">🎾</span>
+                    <span>Tennis Cheat Sheet (Advanced)</span>
+                    <span class="doc-arrow">→</span>
+                </a>
+                <a style="--doc-accent:#7fd6c4" href="https://maderalab.github.io/docs/dev_cheat_sheet_collection.html" target="_blank">
+                    <span class="doc-icon">💻</span>
+                    <span>Developer Cheat Sheets</span>
                     <span class="doc-arrow">→</span>
                 </a>
             </div>
