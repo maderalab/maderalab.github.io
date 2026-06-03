@@ -87,10 +87,17 @@
         /* Project buttons — vibrant cards */
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 18px;
             max-width: 620px;
             margin: 0 auto;
+        }
+
+        /* iPhone — two per row */
+        @media (max-width: 600px) {
+            .projects {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         .projects a {
@@ -211,6 +218,10 @@
                 </a>
                 <a href="https://maderalab.github.io/maderalabplay/Math" target="_blank">
                     <span class="icon">➗</span> Math
+                </a>
+
+                 <a href="https://maderalab.github.io/maderalabplay/Tools" target="_blank">
+                    <span class="icon">🛠️</span> Tools
                 </a>
             </div>
         </section>
