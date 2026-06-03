@@ -1,0 +1,12 @@
+{
+  "name": "Madera Lab",
+  "short_name": "Madera Lab",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#1e3c72",
+  "theme_color": "#1e3c72",
+  "icons": [
+    { "src": "icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
